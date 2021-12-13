@@ -17,4 +17,9 @@ routes.post('/create', async (req, res) => {
     res.redirect('/');
 });
 
+routes.delete('/delete/:id', async (req, res) => {
+    await Person.findByIdAndDelete(req.params.id);
+    res.redirect('/');
+});
+
 module.exports = routes;
